@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mark James Barreda | DOST Internship</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandBlue: '#2D4A5E',
+                        accentOrange: '#F97316',
+                    },
+                    borderRadius: {
+                        '4xl': '2rem',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html { scroll-behavior: smooth; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .img-sharp {
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: auto;
+        }
+        /* Custom zoom cursor for gallery images */
+        .cursor-zoom-in { cursor: zoom-in; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 antialiased font-sans">
+
+    <nav class="sticky top-0 z-40 bg-white/80 backdrop-blur-md border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
+            <h1 class="text-xl font-bold text-brandBlue">Personal Blog | <span class="font-light text-slate-500">DOST V</span></h1>
+            <div class="hidden md:flex space-x-8 text-sm font-semibold uppercase tracking-wider text-slate-600">
+                <a href="#" class="text-brandBlue border-b-2 border-brandBlue pb-1">Dashboard</a>
+                <a href="#" class="hover:text-brandBlue transition">About</a>
+                <a href="#" class="hover:text-brandBlue transition">Docs</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="py-12 md:py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row items-center gap-12">
+            <div class="w-full lg:w-1/2 flex justify-center lg:justify-end">
+                <div class="relative">
+                    <img src="images/me.jpg" alt="Mark James Barreda" 
+                         class="img-sharp w-72 md:w-96 rounded-[2.5rem] shadow-2xl h-auto block">
+                </div>
+            </div>
+
+            <div class="w-full lg:w-1/2 text-center lg:text-left">
+                <span class="bg-blue-100 text-brandBlue px-4 py-1 rounded-full text-xs font-bold uppercase">BSIT Intern @ DOST Region V</span>
+                <h2 class="text-4xl md:text-6xl font-black text-slate-900 mt-4 leading-tight">
+                    Internship <span class="text-brandBlue">Weekly</span> Reports
+                </h2>
+                
+                <div class="mt-6 bg-slate-50 p-6 md:p-8 rounded-3xl border border-slate-100 shadow-sm mb-8 max-w-xl mx-auto lg:mx-0">
+                    <p class="text-lg text-slate-700 leading-relaxed mb-4">
+                        Hi! I am <span class="font-bold text-brandBlue">Mark James Barreda</span>, a BSIT student from the <span class="font-semibold text-gray-900">College of Science</span>.
+                    </p>
+                    <p class="text-slate-600 leading-relaxed">
+                        I am currently deployed for my internship journey at <span class="font-bold text-brandBlue italic">DOST Region V Bicol</span>. Follow my 7-week journey and technical insights below.
+                    </p>
+                </div>
+
+                <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center">
+                    <a href="#learning-progress" class="bg-accentOrange hover:bg-orange-600 text-white font-bold py-4 px-10 rounded-2xl shadow-lg transition transform hover:-translate-y-1">
+                        View Reports &rsaquo;
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="learning-progress" class="py-16 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex justify-between items-end mb-10">
+                <h3 class="text-2xl font-bold text-slate-800">Learning Progress</h3>
+                <span class="text-sm font-medium text-slate-400 italic">Phase: Week 1 to Week 7</span>
+            </div>
+
+            <div id="cards-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"></div>
+        </div>
+    </section>
+
+    <div id="doc-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 md:p-8">
+        <div class="absolute inset-0 bg-slate-900/60 backdrop-blur-sm" onclick="closeModal()"></div>
+        <div class="relative bg-white w-full max-w-6xl h-[85vh] rounded-4xl shadow-2xl overflow-hidden flex flex-col animate-in fade-in zoom-in duration-300">
+            <div class="p-6 md:px-10 border-b flex justify-between items-center bg-white sticky top-0">
+                <div>
+                    <h4 id="modal-title" class="text-2xl font-black text-brandBlue"></h4>
+                    <p id="modal-date" class="text-sm text-slate-400 italic"></p>
+                </div>
+                <button onclick="closeModal()" class="p-2 hover:bg-slate-100 rounded-full transition">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+            </div>
+            
+            <div class="flex-1 overflow-y-auto p-6 md:p-10 no-scrollbar">
+                <div class="grid lg:grid-cols-2 gap-10">
+                    <div>
+                        <h5 class="font-bold text-lg mb-4 flex items-center gap-2">
+                            <span class="w-2 h-6 bg-accentOrange rounded-full"></span> Weekly Reflection
+                        </h5>
+                        <div id="modal-desc" class="text-slate-600 leading-relaxed whitespace-pre-line text-lg"></div>
+                    </div>
+                    <div>
+                        <h5 class="font-bold text-lg mb-4 flex items-center gap-2">
+                            <span class="w-2 h-6 bg-brandBlue rounded-full"></span> Activity Photos
+                        </h5>
+                        <div id="modal-gallery" class="grid grid-cols-2 gap-4"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="zoom-overlay" class="fixed inset-0 z-[60] hidden bg-black/90 flex items-center justify-center p-4 cursor-zoom-out" onclick="closeZoom()">
+        <img id="zoomed-img" src="" class="max-w-full max-h-full rounded-lg shadow-2xl transition-transform duration-300">
+    </div>
+
+    <footer class="bg-brandBlue text-white py-12">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <h4 class="text-xl font-bold mb-6">Connect with Me</h4>
+            <div class="flex justify-center gap-6 mb-8 text-sm font-medium">
+                <a href="https://www.facebook.com/Mark.Barreda.25" class="bg-white/10 hover:bg-white/20 px-6 py-2 rounded-full transition">Facebook</a>
+                <a href="#" class="bg-white/10 hover:bg-white/20 px-6 py-2 rounded-full transition">Instagram</a>
+                <a href="#" class="bg-white/10 hover:bg-white/20 px-6 py-2 rounded-full transition">GitHub</a>
+            </div>
+            <p class="text-xs text-slate-400 tracking-widest uppercase">© 2026 Mark James Barreda • BSIT DOST Region V Intern</p>
+        </div>
+    </footer>
+
+    <script>
+        const reports = {
+            1: { 
+                title: "Week 1: Welcome to DOST!", 
+                date: "February 2026", 
+                desc: `During our first week at DOST, we started with an orientation together with the HR where we learned about the rules, guidelines, and expectations during our internship. We were also given a short tour around the office to familiarize ourselves with the different departments and work areas. This helped us feel more comfortable and understand how the organization works.
+
+On Friday, we introduced ourselves in front of all the employees during the flag lowering ceremony. At first, it felt a bit nerve-wracking, but it was a good experience because we were able to present ourselves and feel welcomed. We also met our assigned mentor, who guided us on the tasks we would be doing and gave us clear instructions, making it easier for us to adjust and learn.
+
+After that, we started doing simple technical tasks such as replacing old computers with new ones. We made sure that the devices were properly set up and working well. Overall, our first week was a mix of learning, meeting people, and doing basic hands-on tasks that helped us adjust to the working environment.`,
+                images: ["images/week1/1.jpg", "images/week1/2.jpg", "images/week1/3.jpg", "images/week1/4.jpg"] 
+            },
+            2: { title: "Week 2: Technical Deep Dive", date: "Jan 8-14, 2026", desc: "Assisted in troubleshooting local area network (LAN) issues.", images: [] },
+            3: { title: "Week 3: Systems Management", date: "Jan 15-21, 2026", desc: "Observed the maintenance of internal databases.", images: [] },
+            4: { title: "Week 4: Project Phase 1", date: "Jan 22-28, 2026", desc: "Started assisting the web development team.", images: [] },
+            5: { title: "Week 5: Infrastructure Support", date: "Jan 29 - Feb 4, 2026", desc: "Worked with server room technicians.", images: [] },
+            6: { title: "Week 6: Advanced Troubleshooting", date: "Feb 5-11, 2026", desc: "Handled complex software installation requests.", images: [] },
+            7: { title: "Week 7: Final Submission", date: "Feb 12-18, 2026", desc: "Completing final internship reports.", images: [] }
+            
+        };
+
+        const container = document.getElementById('cards-container');
+        for (let i = 1; i <= 7; i++) {
+            container.innerHTML += `
+                <div onclick="openModal(${i})" class="group bg-white p-8 rounded-4xl shadow-sm border border-slate-100 hover:shadow-xl hover:border-brandBlue/20 transition-all duration-500 cursor-pointer relative overflow-hidden">
+                    <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-25 transition-opacity duration-500">
+                        <span class="text-6xl font-black italic text-brandBlue">0${i}</span>
+                    </div>
+                    <div class="w-12 h-12 bg-blue-50 text-brandBlue rounded-2xl flex items-center justify-center font-bold mb-6 group-hover:bg-brandBlue group-hover:text-white transition">
+                        W${i}
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-800 mb-2">Week ${i}</h4>
+                    <p class="text-sm text-slate-500 mb-4 line-clamp-2">${reports[i].title}</p>
+                    <span class="text-accentOrange font-bold text-xs uppercase tracking-widest flex items-center gap-2">
+                        View Report <span class="group-hover:translate-x-1 transition">→</span>
+                    </span>
+                </div>
+            `;
+        }
+
+        function openModal(week) {
+            const data = reports[week];
+            document.getElementById('modal-title').innerText = data.title;
+            document.getElementById('modal-date').innerText = data.date;
+            document.getElementById('modal-desc').innerText = data.desc;
+            
+            const gallery = document.getElementById('modal-gallery');
+            gallery.innerHTML = ''; 
+
+            if (data.images && data.images.length > 0) {
+                data.images.forEach(src => {
+                    gallery.innerHTML += `
+                        <div class="aspect-video bg-slate-100 rounded-2xl overflow-hidden border border-slate-200">
+                            <img src="${src}" onclick="zoomImage('${src}')" 
+                                 class="w-full h-full object-cover cursor-zoom-in hover:scale-105 transition duration-300" 
+                                 alt="Documentation">
+                        </div>
+                    `;
+                });
+            } else {
+                gallery.innerHTML = `
+                    <div class="aspect-video bg-slate-100 rounded-2xl border-2 border-dashed border-slate-200 flex items-center justify-center text-slate-400 text-xs text-center p-4 italic">Photos coming soon</div>
+                    <div class="aspect-video bg-slate-100 rounded-2xl border-2 border-dashed border-slate-200 flex items-center justify-center text-slate-400 text-xs text-center p-4 italic">Photos coming soon</div>
+                `;
+            }
+
+            document.getElementById('doc-modal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            document.getElementById('doc-modal').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        function zoomImage(src) {
+            const overlay = document.getElementById('zoom-overlay');
+            const img = document.getElementById('zoomed-img');
+            img.src = src;
+            overlay.classList.remove('hidden');
+        }
+
+        function closeZoom() {
+            document.getElementById('zoom-overlay').classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
