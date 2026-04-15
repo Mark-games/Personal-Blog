@@ -7,11 +7,14 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
+            darkMode: 'class',
             theme: {
                 extend: {
                     colors: {
                         brandBlue: '#2D4A5E',
                         accentOrange: '#F97316',
+                        darkBg: '#0F172A',
+                        darkCard: '#1E293B',
                     },
                     borderRadius: {
                         '4xl': '2rem',
@@ -28,42 +31,56 @@
             image-rendering: auto;
         }
         .cursor-zoom-in { cursor: zoom-in; }
+        
+        /* Smooth transition for theme switching */
+        body { transition: background-color 0.3s ease, color 0.3s ease; }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-900 antialiased font-sans">
+<body class="bg-slate-50 text-slate-900 dark:bg-darkBg dark:text-slate-100 antialiased font-sans">
 
-    <nav class="sticky top-0 z-40 bg-white/80 backdrop-blur-md border-b border-slate-100">
+    <nav class="sticky top-0 z-40 bg-white/80 dark:bg-darkBg/80 backdrop-blur-md border-b border-slate-100 dark:border-slate-800">
         <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
-            <h1 class="text-xl font-bold text-brandBlue">Personal Blog | <span class="font-light text-slate-500">DOST V</span></h1>
-            <div class="hidden md:flex space-x-8 text-sm font-semibold uppercase tracking-wider text-slate-600">
-                <a href="#" class="text-brandBlue border-b-2 border-brandBlue pb-1">Dashboard</a>
+            <div class="flex items-center gap-4">
+                <h1 class="text-xl font-bold text-brandBlue dark:text-blue-400">
+                    Personal Blog | <span class="font-light text-slate-500 dark:text-slate-400">DOST V</span>
+                </h1>
+                
+                <button onclick="toggleDarkMode()" class="p-2 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-yellow-400 hover:ring-2 ring-brandBlue transition-all">
+                    <svg id="sun-icon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 9H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707m12.728 0A9 9 0 115.636 5.636m12.728 12.728L5.636 5.636"></path></svg>
+                    <svg id="moon-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+                </button>
+            </div>
+
+            <div class="hidden md:flex space-x-8 text-sm font-semibold uppercase tracking-wider text-slate-600 dark:text-slate-400">
+                <a href="#" class="text-brandBlue dark:text-blue-400 border-b-2 border-brandBlue pb-1">Dashboard</a>
                 <a href="#" class="hover:text-brandBlue transition">About</a>
                 <a href="#" class="hover:text-brandBlue transition">Docs</a>
             </div>
         </div>
     </nav>
 
-    <section class="py-12 md:py-20 bg-white">
+    <section class="py-12 md:py-20 bg-white dark:bg-slate-900/50">
         <div class="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row items-center gap-12">
             <div class="w-full lg:w-1/2 flex justify-center lg:justify-end">
                 <div class="relative">
                     <img src="images/me.jpg" alt="Mark James Barreda" 
-                         class="img-sharp w-72 md:w-96 rounded-[2.5rem] shadow-2xl h-auto block">
+                         class="img-sharp w-72 md:w-96 rounded-[2.5rem] shadow-2xl h-auto block ring-8 ring-slate-100 dark:ring-slate-800">
                 </div>
             </div>
 
             <div class="w-full lg:w-1/2 text-center lg:text-left">
-                <span class="bg-blue-100 text-brandBlue px-4 py-1 rounded-full text-xs font-bold uppercase">BSIT Intern @ DOST Region V</span>
-                <h2 class="text-4xl md:text-6xl font-black text-slate-900 mt-4 leading-tight">
-                    Internship <span class="text-brandBlue">Weekly</span> Reports
+                <span class="bg-blue-100 dark:bg-blue-900/30 text-brandBlue dark:text-blue-300 px-4 py-1 rounded-full text-xs font-bold uppercase">BSIT Intern @ DOST Region V</span>
+                <h2 class="text-4xl md:text-6xl font-black text-slate-900 dark:text-white mt-4 leading-tight">
+                    Internship <span class="text-brandBlue dark:text-blue-400">Weekly</span> Reports
                 </h2>
                 
-                <div class="mt-6 bg-slate-50 p-6 md:p-8 rounded-3xl border border-slate-100 shadow-sm mb-8 max-w-xl mx-auto lg:mx-0">
-                    <p class="text-lg text-slate-700 leading-relaxed mb-4">
-                        Hi! I am <span class="font-bold text-brandBlue">Mark James Barreda</span>, a BSIT student from the <span class="font-semibold text-gray-900">College of Science</span>.
+                <div class="mt-6 bg-slate-50 dark:bg-darkCard p-6 md:p-8 rounded-3xl border border-slate-100 dark:border-slate-800 shadow-sm mb-8 max-w-xl mx-auto lg:mx-0">
+                    <p class="text-lg text-slate-700 dark:text-slate-300 leading-relaxed mb-4">
+                        Hi! I am <span class="font-bold text-brandBlue dark:text-blue-400">Mark James Barreda</span>, a BSIT student from the <span class="font-semibold dark:text-white">College of Science</span>.
                     </p>
-                    <p class="text-slate-600 leading-relaxed">
-                        I am currently deployed for my internship journey at <span class="font-bold text-brandBlue italic">DOST Region V Bicol</span>. Sharing to you my experiences throughout this journey!
+                    <p class="text-slate-600 dark:text-slate-400 leading-relaxed">
+                        I am currently deployed for my internship journey at <span class="font-bold text-brandBlue dark:text-blue-400 italic">DOST Region V Bicol</span>. Sharing to you my experiences throughout this journey!
+                    </p>
                 </div>
 
                 <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center">
@@ -75,11 +92,11 @@
         </div>
     </section>
 
-    <section id="learning-progress" class="py-16 bg-slate-50">
+    <section id="learning-progress" class="py-16 bg-slate-50 dark:bg-darkBg">
         <div class="max-w-7xl mx-auto px-6">
             <div class="flex justify-between items-end mb-10">
-                <h3 class="text-2xl font-bold text-slate-800">Learning Progress</h3>
-                <span class="text-sm font-medium text-slate-400 italic">Phase: Week 1 to Week 7</span>
+                <h3 class="text-2xl font-bold text-slate-800 dark:text-slate-200">Learning Progress</h3>
+                <span class="text-sm font-medium text-slate-400 italic">Phase: Week 1 to Week 8</span>
             </div>
 
             <div id="cards-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"></div>
@@ -88,27 +105,27 @@
 
     <div id="doc-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 md:p-8">
         <div class="absolute inset-0 bg-slate-900/60 backdrop-blur-sm" onclick="closeModal()"></div>
-        <div class="relative bg-white w-full max-w-6xl h-[85vh] rounded-4xl shadow-2xl overflow-hidden flex flex-col animate-in fade-in zoom-in duration-300">
-            <div class="p-6 md:px-10 border-b flex justify-between items-center bg-white sticky top-0">
+        <div class="relative bg-white dark:bg-darkCard w-full max-w-6xl h-[85vh] rounded-4xl shadow-2xl overflow-hidden flex flex-col animate-in fade-in zoom-in duration-300">
+            <div class="p-6 md:px-10 border-b dark:border-slate-700 flex justify-between items-center sticky top-0 bg-white dark:bg-darkCard">
                 <div>
-                    <h4 id="modal-title" class="text-2xl font-black text-brandBlue"></h4>
+                    <h4 id="modal-title" class="text-2xl font-black text-brandBlue dark:text-blue-400"></h4>
                     <p id="modal-date" class="text-sm text-slate-400 italic"></p>
                 </div>
-                <button onclick="closeModal()" class="p-2 hover:bg-slate-100 rounded-full transition">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                <button onclick="closeModal()" class="p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full transition">
+                    <svg class="w-6 h-6 dark:text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
                 </button>
             </div>
             
             <div class="flex-1 overflow-y-auto p-6 md:p-10 no-scrollbar">
                 <div class="grid lg:grid-cols-2 gap-10">
                     <div>
-                        <h5 class="font-bold text-lg mb-4 flex items-center gap-2">
+                        <h5 class="font-bold text-lg mb-4 flex items-center gap-2 dark:text-slate-200">
                             <span class="w-2 h-6 bg-accentOrange rounded-full"></span> Weekly Reflection
                         </h5>
-                        <div id="modal-desc" class="text-slate-600 leading-relaxed whitespace-pre-line text-lg"></div>
+                        <div id="modal-desc" class="text-slate-600 dark:text-slate-400 leading-relaxed whitespace-pre-line text-lg"></div>
                     </div>
                     <div>
-                        <h5 class="font-bold text-lg mb-4 flex items-center gap-2">
+                        <h5 class="font-bold text-lg mb-4 flex items-center gap-2 dark:text-slate-200">
                             <span class="w-2 h-6 bg-brandBlue rounded-full"></span> Activity Photos
                         </h5>
                         <div id="modal-gallery" class="grid grid-cols-2 gap-4"></div>
@@ -118,15 +135,15 @@
         </div>
     </div>
 
-    <div id="zoom-overlay" class="fixed inset-0 z-[60] hidden bg-black/90 flex items-center justify-center p-4 cursor-zoom-out" onclick="closeZoom()">
+    <div id="zoom-overlay" class="fixed inset-0 z-[60] hidden bg-black/95 flex items-center justify-center p-4 cursor-zoom-out" onclick="closeZoom()">
         <img id="zoomed-img" src="" class="max-w-full max-h-full rounded-lg shadow-2xl transition-transform duration-300">
     </div>
 
-    <footer class="bg-brandBlue text-white py-12">
+    <footer class="bg-brandBlue dark:bg-slate-950 text-white py-12">
         <div class="max-w-7xl mx-auto px-6 text-center">
             <h4 class="text-xl font-bold mb-6">Connect with Me</h4>
             <div class="flex justify-center gap-6 mb-8 text-sm font-medium">
-                <a href="https://www.facebook.com/Mark.Barreda.25" class="bg-white/10 hover:bg-white/20 px-6 py-2 rounded-full transition">Facebook</a>
+                <a href="https://www.facebook.com/Mark.Barreda.25" target="_blank" class="bg-white/10 hover:bg-white/20 px-6 py-2 rounded-full transition">Facebook</a>
                 <a href="#" class="bg-white/10 hover:bg-white/20 px-6 py-2 rounded-full transition">Instagram</a>
                 <a href="#" class="bg-white/10 hover:bg-white/20 px-6 py-2 rounded-full transition">GitHub</a>
             </div>
@@ -139,96 +156,66 @@
             1: { 
                 title: "Week 1: Welcome to DOST!", 
                 date: "February, 2026", 
-                desc: `During our first week at DOST, we started with an orientation together with the HR where we learned about the rules, guidelines, and expectations during our internship. We were also given a short tour around the office to familiarize ourselves with the different departments and work areas. This helped us feel more comfortable and understand how the organization works.
-
-On Friday, we introduced ourselves in front of all the employees during the flag lowering ceremony. At first, it felt a bit nerve-wracking, but it was a good experience because we were able to present ourselves and feel welcomed. We also met our assigned mentor, who guided us on the tasks we would be doing and gave us clear instructions, making it easier for us to adjust and learn.
-
-After that, we started doing simple technical tasks such as replacing old computers with new ones. We made sure that the devices were properly set up and working well. Overall, our first week was a mix of learning, meeting people, and doing basic hands-on tasks that helped us adjust to the working environment.`,
+                desc: `Orientation with HR focused on rules and expectations. We toured the office and familiarized ourselves with different departments. We introduced ourselves during the flag lowering ceremony and started hands-on tasks like PC replacements.`,
                 images: ["images/week1/1.jpg", "images/week1/2.jpg", "images/week1/3.jpg", "images/week1/4.jpg", "images/week1/5.jpg", "images/week1/6.jpg"] 
             },
             2: { 
                 title: "Week 2: Warming Up", 
                 date: "February, 2026", 
-                desc: `During our second week at DOST, we had a meeting with the MIS personnel to discuss the projects that will be assigned to us for the whole internship. Before starting, we were divided into two groups since there are two different project systems to be developed. Each group was assigned to handle and build one system, which helped us focus on our tasks and work better as a team. This activity helped us understand our responsibilities and the goals of the projects.
-
-In this week, we also received our nametags, which made us feel more official as part of the organization. It was a small thing, but it helped us feel more included and recognized in the workplace. We also started planning and sharing ideas within our group about how we will approach our assigned project. This allowed us to practice teamwork, communication, and simple planning skills.
-
-Lastly, I was able to experience being part of the technical team during the GAD orientation at DOST. Together with my partner, we were the ones facilitating the presentation, making sure that the slides were working properly and assisting during the program. It was a new experience for me, and I felt both nervous and excited. Overall, this week helped us become more involved, improve our confidence, and gain hands-on experience in both technical and teamwork tasks.`, 
+                desc: `Met with MIS personnel to discuss long-term projects. We were divided into teams for two different systems. Received our official nametags and assisted as the technical team during a GAD orientation.`, 
                 images: ["images/week2/1.jpg", "images/week2/2.jpg", "images/week2/3.jpg", "images/week2/4.jpg", "images/week2/5.jpg", "images/week2/6.jpg", "images/week2/7.jpg", "images/week2/8.jpg"] 
             },
             3: { 
                 title: "Week 3: Systems & UI Design", 
                 date: "March 2026", 
-                desc: `During our third week at DOST, we had our first presentation report with our mentor and the MIS personnel. In this presentation, we shared the progress of our project and explained what we had done so far. We presented the flowchart of the system to show the process and how the system will work step by step. We also showed our Figma design, which helped them visualize the layout and look of the system.
-
-After the presentation, our mentor and the MIS personnel gave us feedback and comments about our work. They pointed out some areas that needed improvement and suggested better ways to organize the flow and design. We carefully listened to their suggestions and asked questions to make sure we clearly understood what changes were needed. This part helped us learn how to accept feedback and improve our work.
-
-After that, we applied the minor changes based on the comments given to us. We updated our flowchart and adjusted some parts of our Figma design to make it clearer and more user-friendly. We also double-checked our work to make sure everything was correct. Overall, this week helped us improve our system, understand feedback better, and continue making progress on our project.`, 
+                desc: `First progress report presentation. Showcased system flowcharts and Figma designs. Received valuable feedback on UI/UX and made necessary adjustments to ensure a user-friendly flow.`, 
                 images: ["images/week3/1.jpg", "images/week3/2.jpg", "images/week3/3.jpg", "images/week3/4.jpg", "images/week3/5.jpg", "images/week3/6.jpg"]
             },
-            4: { title: "Week 4: Project Phase 1", 
-                 date: "March 2026", 
-                 desc: `For our fifth week at DOST, we started focusing on programming. We set up the tools needed for development such as Android Studio, Laravel, and GitHub. This step was important so we can begin building our system properly. We also made sure that everything was working correctly before starting the actual coding.
-
-After setting up, we began working on the frontend of both the web and mobile application. Our group was divided into two parts, where three members handled the web and two members worked on the mobile app. I was assigned as part of the mobile app development team. We started creating simple layouts and screens, and slowly building the design based on what we planned in the previous weeks.
-
-Aside from development tasks, we also experienced some technical work like fixing LAN cables at the Regional Director’s office. We checked the connections and made sure the network was working properly. With the help of the MIS staff, we were able to complete the task. This week helped us gain more hands-on experience in both programming and basic technical support.`,
-                 images: ["images/week4/1.jpg", "images/week4/2.jpg", "images/week4/3.jpg", "images/week4/4.jpg", "images/week4/5.jpg", "images/week4/6.jpg"] 
-                },
-
-
-            5: { title: "Week 5: Coding Time!", 
-                 date: "March 2026", 
-                 desc: `During our fourth week at DOST, we continued our usual progress report, which is normally done every Monday. However, there are times when the MIS personnel are busy, so the schedule is moved to another day. In this report, we shared the updates on our project and the tasks we have completed. This regular reporting helped us stay on track and make sure that our work is aligned with what is expected.
-
-Aside from the presentation, we also spent time brainstorming with our group. We focused on finalizing the process flow of our system to make sure that every step is clear and organized. We also worked on the design, including the layout, logo, and the name of our system, which is the Event Management System also known as InVta. This part helped us be more creative and think carefully about how the system should look and function for the users.
-
-In addition to our project tasks, I also had the chance to experience setting up a printer in some offices. With the help and guidance of the MIS staff, we learned how to properly connect and install the printer so it can be used by the employees. It was a hands-on experience that helped me understand more about basic technical work. Overall, this week was a mix of reporting, planning, designing, and learning new technical skills.`,
-                 images: ["images/week5/1.jpg", "images/week5/2.jpg", "images/week5/3.jpg", "images/week5/4.jpg", "images/week5/5.jpg", "images/week5/6.jpg", "images/week5/7.jpg" ] 
-                },
-
-            6: { title: "Week 6: Busy Week", 
-                 date: "March 2026", 
-                 desc: `For our sixth week at DOST, I titled it as a “busy week” because many activities happened. We had another progress presentation with the MIS personnel where we shared our updates and current work on the system. We explained what we have finished and what we are still working on. This helped us stay guided and make sure we are doing the right tasks.
-
-Aside from the presentation, we also helped in cleaning the office. We organized some areas and made sure that the workspace is clean and ready, especially since there was an upcoming big event. We also assisted in preparing materials like nametags and booklets that will be used for the event. These tasks may be simple, but they are very important to make the event organized and successful.
-
-We also supported the MIS unit in preparing for the big event they conducted. By helping with the materials and setup, we were able to see how teamwork is important in handling large activities. This week may be tiring, but it was also a good experience because we learned how to manage time, help others, and be part of a bigger responsibility in the workplace.`,
-                 images: ["images/week6/1.jpg", "images/week6/2.jpg", "images/week6/3.jpg", "images/week6/4.jpg", "images/week6/5.jpg", "images/week6/6.jpg", "images/week6/7.jpg", "images/week6/7.jpg"] 
-                },
-
-            7: { title: "Week 7: Is it Vacation already?", 
-                 date: "April 2026", 
-                 desc: `For our seventh week at DOST, I titled it “Is it vacation already?” because we only worked from Monday to Wednesday due to the Holy Week. Since the work days were short, we did not have that many tasks compared to the previous weeks. Still, we made sure to use our time well and continue our responsibilities before the break.
-
-From Monday to Wednesday, we continued coding and working on our system. We also had discussions within our group to make sure everything is clear and organized. We decided to finish some modules early so that when we come back after Holy Week, we will have less work to do. This helped us stay prepared and manage our time better.
-
-As usual, we also had another progress report with the MIS personnel. We shared the updates on what we have completed and our plans moving forward. Even though the week was short, we were still able to make progress. Overall, this week was light but still productive, and it helped us prepare for the next tasks after the break.`,
-                 images: ["images/week7/1.jpg", "images/week7/2.jpg", "images/week7/3.jpg", "images/week7/4.jpg", "images/week7/5.jpg"] 
-                },
-            8: { title: "Week 8: Normal Days", 
-                 date: "April 2026", 
-                 desc: `For our eighth week at DOST, we had another progress report with the MIS personnel. We shared the updates on our system and showed what parts are already working. They also gave us some comments and reminders so we can improve our work and stay on the right track. This weekly reporting helped us stay focused and aware of our deadlines.
-
-Most of our time this week was spent on coding, especially on the backend of the system. We worked on connecting the database, fixing errors, and making sure that the features are working properly. Since our internnovation is getting closer, we needed to move faster and be more focused on finishing the important parts of the system.
-
-Because of the limited time left, we really tried to work harder and manage our tasks well. We also helped each other in solving problems and completing modules. Even though the work became more challenging, we stayed motivated to finish the system. Overall, this week was very productive and focused on preparing our system for the upcoming presentation.`,
-                 images: ["images/week8/1.jpg", "images/week8/2.jpg", "images/week8/3.jpg", "images/week8/4.jpg", "images/week8/5.jpg", "images/week8/6.jpg"] 
-                }
+            4: { 
+                title: "Week 4: Development Start", 
+                date: "March 2026", 
+                desc: `Set up the development environment with Android Studio, Laravel, and GitHub. Began frontend coding for both web and mobile modules. Also handled technical tasks like fixing LAN cables for the Regional Director.`,
+                images: ["images/week4/1.jpg", "images/week4/2.jpg", "images/week4/3.jpg", "images/week4/4.jpg", "images/week4/5.jpg", "images/week4/6.jpg"] 
+            },
+            5: { 
+                title: "Week 5: Coding Time!", 
+                date: "March 2026", 
+                desc: `Continued progress reports and deep brainstorming sessions. Finalized the process flow for the "InVta" Event Management System. Also performed printer setups across various offices.`,
+                images: ["images/week5/1.jpg", "images/week5/2.jpg", "images/week5/3.jpg", "images/week5/4.jpg", "images/week5/5.jpg", "images/week5/6.jpg", "images/week5/7.jpg" ] 
+            },
+            6: { 
+                title: "Week 6: Busy Week", 
+                date: "March 2026", 
+                desc: `High-intensity week with system presentations and event preparation. Helped organize office spaces and prepared materials like nametags and booklets for a major DOST event.`,
+                images: ["images/week6/1.jpg", "images/week6/2.jpg", "images/week6/3.jpg", "images/week6/4.jpg", "images/week6/5.jpg", "images/week6/6.jpg", "images/week6/7.jpg"] 
+            },
+            7: { 
+                title: "Week 7: Holy Week Break", 
+                date: "April 2026", 
+                desc: `Shortened work week due to the holidays. Focused on finishing specific modules early to stay ahead of schedule. Updated the MIS team on our technical progress.`,
+                images: ["images/week7/1.jpg", "images/week7/2.jpg", "images/week7/3.jpg", "images/week7/4.jpg", "images/week7/5.jpg"] 
+            },
+            8: { 
+                title: "Week 8: Backend Focus", 
+                date: "April 2026", 
+                desc: `Intensive backend coding week. Connected databases and resolved logic errors. Preparing for the "Internnovation" presentation as the internship nears completion.`,
+                images: ["images/week8/1.jpg", "images/week8/2.jpg", "images/week8/3.jpg", "images/week8/4.jpg", "images/week8/5.jpg", "images/week8/6.jpg"] 
+            }
         };
 
+        // Initialize Cards
         const container = document.getElementById('cards-container');
         for (let i = 1; i <= 8; i++) {
             container.innerHTML += `
-                <div onclick="openModal(${i})" class="group bg-white p-8 rounded-4xl shadow-sm border border-slate-100 hover:shadow-xl hover:border-brandBlue/20 transition-all duration-500 cursor-pointer relative overflow-hidden">
+                <div onclick="openModal(${i})" class="group bg-white dark:bg-darkCard p-8 rounded-4xl shadow-sm border border-slate-100 dark:border-slate-800 hover:shadow-xl hover:border-brandBlue/20 transition-all duration-500 cursor-pointer relative overflow-hidden">
                     <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-25 transition-opacity duration-500">
-                        <span class="text-6xl font-black italic text-brandBlue">0${i}</span>
+                        <span class="text-6xl font-black italic text-brandBlue dark:text-blue-500">0${i}</span>
                     </div>
-                    <div class="w-12 h-12 bg-blue-50 text-brandBlue rounded-2xl flex items-center justify-center font-bold mb-6 group-hover:bg-brandBlue group-hover:text-white transition">
+                    <div class="w-12 h-12 bg-blue-50 dark:bg-blue-900/30 text-brandBlue dark:text-blue-400 rounded-2xl flex items-center justify-center font-bold mb-6 group-hover:bg-brandBlue group-hover:text-white transition">
                         W${i}
                     </div>
-                    <h4 class="text-xl font-bold text-slate-800 mb-2">Week ${i}</h4>
-                    <p class="text-sm text-slate-500 mb-4 line-clamp-2">${reports[i].title}</p>
+                    <h4 class="text-xl font-bold text-slate-800 dark:text-slate-100 mb-2">Week ${i}</h4>
+                    <p class="text-sm text-slate-500 dark:text-slate-400 mb-4 line-clamp-2">${reports[i].title}</p>
                     <span class="text-accentOrange font-bold text-xs uppercase tracking-widest flex items-center gap-2">
                         View Report <span class="group-hover:translate-x-1 transition">→</span>
                     </span>
@@ -236,31 +223,48 @@ Because of the limited time left, we really tried to work harder and manage our 
             `;
         }
 
+        // Dark Mode Logic
+        function toggleDarkMode() {
+            const html = document.documentElement;
+            const sunIcon = document.getElementById('sun-icon');
+            const moonIcon = document.getElementById('moon-icon');
+            
+            html.classList.toggle('dark');
+            
+            if (html.classList.contains('dark')) {
+                sunIcon.classList.remove('hidden');
+                moonIcon.classList.add('hidden');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                sunIcon.classList.add('hidden');
+                moonIcon.classList.remove('hidden');
+                localStorage.setItem('theme', 'light');
+            }
+        }
+
+        // Load saved theme
+        if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+            document.getElementById('sun-icon').classList.remove('hidden');
+            document.getElementById('moon-icon').classList.add('hidden');
+        }
+
+        // Modal Functions
         function openModal(week) {
             const data = reports[week];
             document.getElementById('modal-title').innerText = data.title;
             document.getElementById('modal-date').innerText = data.date;
             document.getElementById('modal-desc').innerText = data.desc;
-            
             const gallery = document.getElementById('modal-gallery');
             gallery.innerHTML = ''; 
 
-            if (data.images && data.images.length > 0) {
-                data.images.forEach(src => {
-                    gallery.innerHTML += `
-                        <div class="aspect-video bg-slate-100 rounded-2xl overflow-hidden border border-slate-200">
-                            <img src="${src}" onclick="zoomImage('${src}')" 
-                                 class="w-full h-full object-cover cursor-zoom-in hover:scale-105 transition duration-300" 
-                                 alt="Documentation">
-                        </div>
-                    `;
-                });
-            } else {
-                gallery.innerHTML = `
-                    <div class="aspect-video bg-slate-100 rounded-2xl border-2 border-dashed border-slate-200 flex items-center justify-center text-slate-400 text-xs text-center p-4 italic">Photos coming soon</div>
-                    <div class="aspect-video bg-slate-100 rounded-2xl border-2 border-dashed border-slate-200 flex items-center justify-center text-slate-400 text-xs text-center p-4 italic">Photos coming soon</div>
-                `;
-            }
+            data.images.forEach(src => {
+                gallery.innerHTML += `
+                    <div class="aspect-video bg-slate-100 dark:bg-slate-800 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-700">
+                        <img src="${src}" onclick="zoomImage('${src}')" 
+                             class="w-full h-full object-cover cursor-zoom-in hover:scale-105 transition duration-300">
+                    </div>`;
+            });
 
             document.getElementById('doc-modal').classList.remove('hidden');
             document.body.style.overflow = 'hidden';
