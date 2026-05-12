@@ -96,10 +96,16 @@
         <div class="max-w-7xl mx-auto px-6">
             <div class="flex justify-between items-end mb-10">
                 <h3 class="text-2xl font-bold text-slate-800 dark:text-slate-200">Learning Progress</h3>
-                <span class="text-sm font-medium text-slate-400 italic">Phase: Week 1 to Week 8</span>
+                <span class="text-sm font-medium text-slate-400 italic">Phase: Week 1 to Week 13</span>
             </div>
 
             <div id="cards-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"></div>
+
+            <div id="see-all-container" class="mt-12 text-center">
+                <button onclick="toggleAllCards()" id="see-all-btn" class="bg-white dark:bg-darkCard border border-slate-200 dark:border-slate-800 text-brandBlue dark:text-blue-400 font-bold py-3 px-10 rounded-2xl hover:bg-slate-50 dark:hover:bg-slate-800 transition shadow-sm">
+                    See All Reports
+                </button>
+            </div>
         </div>
     </section>
 
@@ -156,72 +162,141 @@
             1: { 
                 title: "Week 1: Welcome to DOST!", 
                 date: "February, 2026", 
-                desc: `Orientation with HR focused on rules and expectations. We toured the office and familiarized ourselves with different departments. We introduced ourselves during the flag lowering ceremony and started hands-on tasks like PC replacements.`,
+                desc: `During our first week at DOST, we started with an orientation together with the HR where we learned about the rules, guidelines, and expectations during our internship. We were also given a short tour around the office to familiarize ourselves with the different departments and work areas. This helped us feel more comfortable and understand how the organization works.\n\nOn Friday, we introduced ourselves in front of all the employees during the flag lowering ceremony. At first, it felt a bit nerve-wracking, but it was a good experience because we were able to present ourselves and feel welcomed. We also met our assigned mentor, who guided us on the tasks we would be doing and gave us clear instructions, making it easier for us to adjust and learn.\n\nAfter that, we started doing simple technical tasks such as replacing old computers with new ones. We made sure that the devices were properly set up and working well. Overall, our first week was a mix of learning, meeting people, and doing basic hands-on tasks that helped us adjust to the working environment.`,
                 images: ["images/week1/1.jpg", "images/week1/2.jpg", "images/week1/3.jpg", "images/week1/4.jpg", "images/week1/5.jpg", "images/week1/6.jpg"] 
             },
             2: { 
                 title: "Week 2: Warming Up", 
                 date: "February, 2026", 
-                desc: `Met with MIS personnel to discuss long-term projects. We were divided into teams for two different systems. Received our official nametags and assisted as the technical team during a GAD orientation.`, 
+                desc: `During our second week at DOST, we had a meeting with the MIS personnel to discuss the projects that will be assigned to us for the whole internship. Before starting, we were divided into two groups since there are two different project systems to be developed. Each group was assigned to handle and build one system, which helped us focus on our tasks and work better as a team. This activity helped us understand our responsibilities and the goals of the projects.\n\nIn this week, we also received our nametags, which made us feel more official as part of the organization. It was a small thing, but it helped us feel more included and recognized in the workplace. We also started planning and sharing ideas within our group about how we will approach our assigned project. This allowed us to practice teamwork, communication, and simple planning skills.\n\nLastly, I was able to experience being part of the technical team during the GAD orientation at DOST. Together with my partner, we were the ones facilitating the presentation, making sure that the slides were working properly and assisting during the program. It was a new experience for me, and I felt both nervous and excited. Overall, this week helped us become more involved, improve our confidence, and gain hands-on experience in both technical and teamwork tasks.`, 
                 images: ["images/week2/1.jpg", "images/week2/2.jpg", "images/week2/3.jpg", "images/week2/4.jpg", "images/week2/5.jpg", "images/week2/6.jpg", "images/week2/7.jpg", "images/week2/8.jpg"] 
             },
             3: { 
                 title: "Week 3: Systems & UI Design", 
                 date: "March 2026", 
-                desc: `First progress report presentation. Showcased system flowcharts and Figma designs. Received valuable feedback on UI/UX and made necessary adjustments to ensure a user-friendly flow.`, 
+                desc: `During our third week at DOST, we had our first presentation report with our mentor and the MIS personnel. In this presentation, we shared the progress of our project and explained what we had done so far. We presented the flowchart of the system to show the process and how the system will work step by step. We also showed our Figma design, which helped them visualize the layout and look of the system.\n\nAfter the presentation, our mentor and the MIS personnel gave us feedback and comments about our work. They pointed out some areas that needed improvement and suggested better ways to organize the flow and design. We carefully listened to their suggestions and asked questions to make sure we clearly understood what changes were needed. This part helped us learn how to accept feedback and improve our work.\n\nAfter that, we applied the minor changes based on the comments given to us. We updated our flowchart and adjusted some parts of our Figma design to make it clearer and more user-friendly. We also double-checked our work to make sure everything was correct. Overall, this week helped us improve our system, understand feedback better, and continue making progress on our project.`, 
                 images: ["images/week3/1.jpg", "images/week3/2.jpg", "images/week3/3.jpg", "images/week3/4.jpg", "images/week3/5.jpg", "images/week3/6.jpg"]
             },
             4: { 
                 title: "Week 4: Development Start", 
                 date: "March 2026", 
-                desc: `Set up the development environment with Android Studio, Laravel, and GitHub. Began frontend coding for both web and mobile modules. Also handled technical tasks like fixing LAN cables for the Regional Director.`,
+                desc: `During our fourth week at DOST, we continued our usual progress report, which is normally done every Monday. However, there are times when the MIS personnel are busy, so the schedule is moved to another day. In this report, we shared the updates on our project and the tasks we have completed. This regular reporting helped us stay on track and make sure that our work is aligned with what is expected.\n\nAside from the presentation, we also spent time brainstorming with our group. We focused on finalizing the process flow of our system to make sure that every step is clear and organized. We also worked on the design, including the layout, logo, and the name of our system, which is the Event Management System also known as InVta. This part helped us be more creative and think carefully about how the system should look and function for the users.\n\nIn addition to our project tasks, I also had the chance to experience setting up a printer in some offices. With the help and guidance of the MIS staff, we learned how to properly connect and install the printer so it can be used by the employees. It was a hands-on experience that helped me understand more about basic technical work. Overall, this week was a mix of reporting, planning, designing, and learning new technical skills.`,
                 images: ["images/week4/1.jpg", "images/week4/2.jpg", "images/week4/3.jpg", "images/week4/4.jpg", "images/week4/5.jpg", "images/week4/6.jpg"] 
             },
             5: { 
                 title: "Week 5: Coding Time!", 
                 date: "March 2026", 
-                desc: `Continued progress reports and deep brainstorming sessions. Finalized the process flow for the "InVta" Event Management System. Also performed printer setups across various offices.`,
+                desc: `For our fifth week at DOST, we started focusing on programming. We set up the tools needed for development such as Android Studio, Laravel, and GitHub. This step was important so we can begin building our system properly. We also made sure that everything was working correctly before starting the actual coding.\n\nAfter setting up, we began working on the frontend of both the web and mobile application. Our group was divided into two parts, where three members handled the web and two members worked on the mobile app. I was assigned as part of the mobile app development team. We started creating simple layouts and screens, and slowly building the design based on what we planned in the previous weeks.\n\nAside from development tasks, we also experienced some technical work like fixing LAN cables at the Regional Director’s office. We checked the connections and made sure the network was working properly. With the help of the MIS staff, we were able to complete the task. This week helped us gain more hands-on experience in both programming and basic technical support.`,
                 images: ["images/week5/1.jpg", "images/week5/2.jpg", "images/week5/3.jpg", "images/week5/4.jpg", "images/week5/5.jpg", "images/week5/6.jpg", "images/week5/7.jpg" ] 
             },
             6: { 
                 title: "Week 6: Busy Week", 
                 date: "March 2026", 
-                desc: `High-intensity week with system presentations and event preparation. Helped organize office spaces and prepared materials like nametags and booklets for a major DOST event.`,
+                desc: `For our sixth week at DOST, I titled it as a “busy week” because many activities happened. We had another progress presentation with the MIS personnel where we shared our updates and current work on the system. We explained what we have finished and what we are still working on. This helped us stay guided and make sure we are doing the right tasks.\n\nAside from the presentation, we also helped in cleaning the office. We organized some areas and made sure that the workspace is clean and ready, especially since there was an upcoming big event. We also assisted in preparing materials like nametags and booklets that will be used for the event. These tasks may be simple, but they are very important to make the event organized and successful.\n\nWe also supported the MIS unit in preparing for the big event they conducted. By helping with the materials and setup, we were able to see how teamwork is important in handling large activities. This week may be tiring, but it was also a good experience because we learned how to manage time, help others, and be part of a bigger responsibility in the workplace.`,
                 images: ["images/week6/1.jpg", "images/week6/2.jpg", "images/week6/3.jpg", "images/week6/4.jpg", "images/week6/5.jpg", "images/week6/6.jpg", "images/week6/7.jpg"] 
             },
             7: { 
                 title: "Week 7: Holy Week Break", 
                 date: "April 2026", 
-                desc: `Shortened work week due to the holidays. Focused on finishing specific modules early to stay ahead of schedule. Updated the MIS team on our technical progress.`,
+                desc: `For our seventh week at DOST, I titled it “Is it vacation already?” because we only worked from Monday to Wednesday due to the Holy Week. Since the work days were short, we did not have that many tasks compared to the previous weeks. Still, we made sure to use our time well and continue our responsibilities before the break.\n\nFrom Monday to Wednesday, we continued coding and working on our system. We also had discussions within our group to make sure everything is clear and organized. We decided to finish some modules early so that when we come back after Holy Week, we will have less work to do. This helped us stay prepared and manage our time better.\n\nAs usual, we also had another progress report with the MIS personnel. We shared the updates on what we have completed and our plans moving forward. Even though the week was short, we were still able to make progress. Overall, this week was light but still productive, and it helped us prepare for the next tasks after the break.`,
                 images: ["images/week7/1.jpg", "images/week7/2.jpg", "images/week7/3.jpg", "images/week7/4.jpg", "images/week7/5.jpg"] 
             },
             8: { 
                 title: "Week 8: Backend Focus", 
                 date: "April 2026", 
-                desc: `Intensive backend coding week. Connected databases and resolved logic errors. Preparing for the "Internnovation" presentation as the internship nears completion.`,
-                images: ["images/week8/1.jpg", "images/week8/2.jpg", "images/week8/3.jpg", "images/week8/4.jpg", "images/week8/5.jpg", "images/week8/6.jpg"] 
+                desc: `For our eighth week at DOST, we had another progress report with the MIS personnel. We shared the updates on our system and showed what parts are already working. They also gave us some comments and reminders so we can improve our work and stay on the right track. This weekly reporting helped us stay focused and aware of our deadlines.\n\nMost of our time this week was spent on coding, especially on the backend of the system. We worked on connecting the database, fixing errors, and making sure that the features are working properly. Since our internnovation is getting closer, we needed to move faster and be more focused on finishing the important parts of the system.\n\nBecause of the limited time left, we really tried to work harder and manage our tasks well. We also helped each other in solving problems and completing modules. Even though the work became more challenging, we stayed motivated to finish the system. Overall, this week was very productive and focused on preparing our system for the upcoming presentation.`,
+                images: ["images/week8/1.jpg", "images/week8/2.jpg", "images/week8/3.jpg", "images/week8/4.jpg", "images/week8/5.jpg", "images/week8/6.jpg", "images/week8/7.jpg"] 
+            },
+            9: { 
+                title: "Week 9: Clean it Up!", 
+                date: "April 2026", 
+                desc: `For our ninth week at DOST, we continued focusing on our project while also helping with office tasks. In the morning, we spent most of our time coding and improving the system. We continued working on the features and fixing some issues to make sure that the system is functioning properly. Since the deadline for our project is getting closer, we remained focused on completing our tasks.
+
+In the afternoon, we helped in disposing of old printers that were no longer being used. We organized the old equipment and cleaned the area to make the office more organized and spacious. This task required teamwork because there were many printers and materials to arrange. Although it was tiring, it helped improve the condition of the office.
+
+The cleanup was also important because we were preparing to transfer to another office. Since the start of our internship, we had been staying in a different room, but this time, we were given the chance to move and work closer with the MIS personnel. Being in the same office helped us communicate more easily and ask for guidance whenever needed. Overall, this week was a balance of coding, office work, and preparing for a better working environment.`,
+                images: ["images/week9/1.jpg", "images/week9/2.jpg", "images/week9/3.jpg", "images/week9/4.jpg", "images/week9/5.jpg", "images/week9/6.jpg", "images/week9/7.jpg", "images/week9/8.jpg" ] 
+            },
+            10: { 
+                title: "Week 10: I feel so nervous, assisting as technical during SALUDO.", 
+                date: "April 2026", 
+                desc: `For our tenth week at DOST, this became one of my favorite weeks because we were able to join and assist in a special event held at the Vela Hotel. During this event, Francis and I were assigned as part of the technical team. We helped make sure that the presentations ran smoothly and that the equipment was working properly. Being part of a real event gave us a new experience and helped us become more confident in handling technical tasks.
+
+Most of the week was focused on technical work, which made this week very enjoyable for me. Almost every day, we were asked to assist in presentations and help set up devices needed for the program. We were the ones responsible for preparing the presentation materials, checking the projector, and making sure that everything was ready before the sessions started. This experience helped us improve our problem-solving skills and taught us how important technical support is during events.
+
+Working closely with the staff and helping during the presentations also allowed us to gain more hands-on experience. At first, there were moments when we felt nervous, especially when handling important tasks, but we slowly became more comfortable. Seeing the event run smoothly because of our help felt rewarding. Overall, this week was memorable because it allowed us to learn new things, improve our confidence, and experience what it feels like to be part of a technical team in a professional event.`,
+                images: ["images/week10/1.jpg", "images/week10/2.jpg", "images/week10/3.jpg", "images/week10/4.jpg", "images/week10/5.jpg", "images/week10/6.jpg", "images/week10/7.jpg", "images/week10/8.jpg", "images/week10/9.jpg", "images/week10/10.jpg", "images/week10/11.jpg" ] 
+            },
+            11: { 
+                title: "Week 11: MIS Boys :)", 
+                date: "April 2026", 
+                desc: `This week involved integrating the web dashboard with the mobile application's API. We verified that data saved on the mobile app reflects correctly on the admin side, ensuring full system synchronization.`,
+                images: ["images/week11/1.jpg", "images/week11/2.jpg", "images/week11/3.jpg", "images/week11/4.jpg", "images/week11/5.jpg", "images/week11/6.jpg", "images/week11/7.jpg", "images/week11/8.jpg", "images/week11/9.jpg", "images/week11/10.jpg", "images/week11/11.jpg"] 
+            },
+            12: { 
+                title: "Week 12: Fire! Fire! Fire!", 
+                date: "May 2026", 
+                desc: `We began compiling the technical documentation and user manuals for InVta. Clear documentation ensures that the MIS team can maintain and update the system even after our internship ends.`,
+                images: ["images/week12/1.jpg", "images/week12/2.jpg", "images/week12/3.jpg", "images/week12/4.jpg", "images/week12/5.jpg", "images/week12/6.jpg", "images/week12/7.jpg", "images/week12/8.jpg", "images/week12/9.jpg"] 
+            },
+            13: { 
+                title: "Week 13: Last Week as intern", 
+                date: "May 2026", 
+                desc: `The final week was dedicated to the final presentation of our system to the Regional Director and MIS staff. We showcased all features and discussed the technical journey we underwent at DOST V.`,
+                images: ["images/week13/1.jpg", "images/week13/2.jpg", "images/week13/3.jpg", "images/week13/4.jpg", "images/week13/5.jpg", "images/week13/6.jpg", "images/week13/6.jpg"] 
             }
         };
 
+        // NEW LOGIC: TRACK EXPANSION STATE
+        let isExpanded = false;
+
         // Initialize Cards
         const container = document.getElementById('cards-container');
-        for (let i = 1; i <= 8; i++) {
-            container.innerHTML += `
-                <div onclick="openModal(${i})" class="group bg-white dark:bg-darkCard p-8 rounded-4xl shadow-sm border border-slate-100 dark:border-slate-800 hover:shadow-xl hover:border-brandBlue/20 transition-all duration-500 cursor-pointer relative overflow-hidden">
-                    <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-25 transition-opacity duration-500">
-                        <span class="text-6xl font-black italic text-brandBlue dark:text-blue-500">0${i}</span>
+        
+        function renderCards() {
+            container.innerHTML = '';
+            for (let i = 1; i <= 13; i++) {
+                // Add "hidden" and "extra-card" classes to cards after the 4th one
+                const isExtraClass = i > 4 ? 'hidden extra-card' : '';
+                const displayNum = i < 10 ? `0${i}` : i;
+
+                container.innerHTML += `
+                    <div onclick="openModal(${i})" class="${isExtraClass} group bg-white dark:bg-darkCard p-8 rounded-4xl shadow-sm border border-slate-100 dark:border-slate-800 hover:shadow-xl hover:border-brandBlue/20 transition-all duration-500 cursor-pointer relative overflow-hidden">
+                        <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-25 transition-opacity duration-500">
+                            <span class="text-6xl font-black italic text-brandBlue dark:text-blue-500">${displayNum}</span>
+                        </div>
+                        <div class="w-12 h-12 bg-blue-50 dark:bg-blue-900/30 text-brandBlue dark:text-blue-400 rounded-2xl flex items-center justify-center font-bold mb-6 group-hover:bg-brandBlue group-hover:text-white transition">
+                            W${i}
+                        </div>
+                        <h4 class="text-xl font-bold text-slate-800 dark:text-slate-100 mb-2">Week ${i}</h4>
+                        <p class="text-sm text-slate-500 dark:text-slate-400 mb-4 line-clamp-2">${reports[i].title}</p>
+                        <span class="text-accentOrange font-bold text-xs uppercase tracking-widest flex items-center gap-2">
+                            View Report <span class="group-hover:translate-x-1 transition">→</span>
+                        </span>
                     </div>
-                    <div class="w-12 h-12 bg-blue-50 dark:bg-blue-900/30 text-brandBlue dark:text-blue-400 rounded-2xl flex items-center justify-center font-bold mb-6 group-hover:bg-brandBlue group-hover:text-white transition">
-                        W${i}
-                    </div>
-                    <h4 class="text-xl font-bold text-slate-800 dark:text-slate-100 mb-2">Week ${i}</h4>
-                    <p class="text-sm text-slate-500 dark:text-slate-400 mb-4 line-clamp-2">${reports[i].title}</p>
-                    <span class="text-accentOrange font-bold text-xs uppercase tracking-widest flex items-center gap-2">
-                        View Report <span class="group-hover:translate-x-1 transition">→</span>
-                    </span>
-                </div>
-            `;
+                `;
+            }
         }
+
+        // TOGGLE FUNCTION
+        function toggleAllCards() {
+            const extraCards = document.querySelectorAll('.extra-card');
+            const btn = document.getElementById('see-all-btn');
+            isExpanded = !isExpanded;
+
+            extraCards.forEach(card => {
+                if (isExpanded) {
+                    card.classList.remove('hidden');
+                    card.classList.add('animate-in', 'fade-in', 'slide-in-from-bottom-4', 'duration-500');
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+
+            btn.innerText = isExpanded ? 'Show Less' : 'See All Reports';
+        }
+
+        renderCards();
 
         // Dark Mode Logic
         function toggleDarkMode() {
