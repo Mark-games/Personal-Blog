@@ -16,9 +16,7 @@
                         darkBg: '#0F172A',
                         darkCard: '#1E293B',
                     },
-                    borderRadius: {
-                        '4xl': '2rem',
-                    }
+                    borderRadius: { '4xl': '2rem' }
                 }
             }
         }
@@ -26,13 +24,8 @@
     <style>
         html { scroll-behavior: smooth; }
         .no-scrollbar::-webkit-scrollbar { display: none; }
-        .img-sharp {
-            image-rendering: -webkit-optimize-contrast;
-            image-rendering: auto;
-        }
+        .img-sharp { image-rendering: -webkit-optimize-contrast; image-rendering: auto; }
         .cursor-zoom-in { cursor: zoom-in; }
-        
-        /* Smooth transition for theme switching */
         body { transition: background-color 0.3s ease, color 0.3s ease; }
     </style>
 </head>
@@ -44,7 +37,6 @@
                 <h1 class="text-xl font-bold text-brandBlue dark:text-blue-400">
                     Personal Blog | <span class="font-light text-slate-500 dark:text-slate-400">DOST V</span>
                 </h1>
-                
                 <button onclick="toggleDarkMode()" class="p-2 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-yellow-400 hover:ring-2 ring-brandBlue transition-all">
                     <svg id="sun-icon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 9H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707m12.728 0A9 9 0 115.636 5.636m12.728 12.728L5.636 5.636"></path></svg>
                     <svg id="moon-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
@@ -53,8 +45,7 @@
 
             <div class="hidden md:flex space-x-8 text-sm font-semibold uppercase tracking-wider text-slate-600 dark:text-slate-400">
                 <a href="#" class="text-brandBlue dark:text-blue-400 border-b-2 border-brandBlue pb-1">Dashboard</a>
-                <a href="#" class="hover:text-brandBlue transition">About</a>
-                <a href="#" class="hover:text-brandBlue transition">Docs</a>
+                <a href="about.html" class="hover:text-brandBlue transition">About</a>
             </div>
         </div>
     </nav>
@@ -121,7 +112,6 @@
                     <svg class="w-6 h-6 dark:text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
                 </button>
             </div>
-            
             <div class="flex-1 overflow-y-auto p-6 md:p-10 no-scrollbar">
                 <div class="grid lg:grid-cols-2 gap-10">
                     <div>
@@ -150,8 +140,7 @@
             <h4 class="text-xl font-bold mb-6">Connect with Me</h4>
             <div class="flex justify-center gap-6 mb-8 text-sm font-medium">
                 <a href="https://www.facebook.com/Mark.Barreda.25" target="_blank" class="bg-white/10 hover:bg-white/20 px-6 py-2 rounded-full transition">Facebook</a>
-                <a href="#" class="bg-white/10 hover:bg-white/20 px-6 py-2 rounded-full transition">Instagram</a>
-                <a href="#" class="bg-white/10 hover:bg-white/20 px-6 py-2 rounded-full transition">GitHub</a>
+                <a href="https://github.com/Mark-games" class="bg-white/10 hover:bg-white/20 px-6 py-2 rounded-full transition">GitHub</a>
             </div>
             <p class="text-xs text-slate-400 tracking-widest uppercase">© 2026 Mark James Barreda • BSIT DOST Region V Intern</p>
         </div>
@@ -230,136 +219,90 @@ Working closely with the staff and helping during the presentations also allowed
             11: { 
                 title: "Week 11: MIS Boys :)", 
                 date: "April 2026", 
-                desc: `This week involved integrating the web dashboard with the mobile application's API. We verified that data saved on the mobile app reflects correctly on the admin side, ensuring full system synchronization.`,
+                desc: `For our eleventh week at DOST, we spent time helping with the disposal of old electronic devices that were no longer being used. We also helped rearrange and organize the area to make the office look cleaner and more organized. This task helped improve the workspace and made it easier to move around and find equipment. Although it was a simple task, it taught us the importance of keeping the workplace neat and organized.
+
+Aside from office work, we also had another presentation with the MIS personnel to discuss the progress of our project. As part of our weekly routine, we shared updates on what we had finished and the features we were currently working on. These presentations helped track our progress and allowed the MIS personnel to give comments and suggestions to improve our system. It also helped us stay focused on our goals and deadlines.
+
+Compared to the previous weeks, this week was more normal and less busy. We continued working on our project while managing small office tasks when needed. Even though there were no major activities, we still learned valuable things through teamwork, communication, and regular progress checking. Overall, this week helped us stay productive and continue moving forward with our project.`,
                 images: ["images/week11/1.jpg", "images/week11/2.jpg", "images/week11/3.jpg", "images/week11/4.jpg", "images/week11/5.jpg", "images/week11/6.jpg", "images/week11/7.jpg", "images/week11/8.jpg", "images/week11/9.jpg", "images/week11/10.jpg", "images/week11/11.jpg"] 
             },
             12: { 
                 title: "Week 12: Fire! Fire! Fire!", 
                 date: "May 2026", 
-                desc: `We began compiling the technical documentation and user manuals for InVta. Clear documentation ensures that the MIS team can maintain and update the system even after our internship ends.`,
+                desc: `For our twelfth week at DOST, the week was a combination of a normal work week and a task-filled week. We continued doing our usual responsibilities, especially working on our project, while also helping with some technical tasks in the office. Since our internship project was almost finished, we focused more on checking and finalizing the remaining parts of the system. We made sure that the features were working properly and fixed some minor issues along the way.
+
+One of the experiences I had this week was being assigned again as part of the technical team during the fire drill. My task was to help with the presentation and make sure the technical equipment was working properly during the activity. This gave me another opportunity to improve my confidence and gain more experience in handling technical responsibilities during important events. It also helped me become more comfortable in assisting programs and presentations.
+
+Aside from that, we also worked on fixing the connection between computers and printers using a wireless setup. We checked the printer settings, connections, and network to make sure that the devices could connect properly. With the guidance of the MIS personnel, we were able to troubleshoot some issues and help the employees use the printers more easily. Overall, this week was a balance of project development and technical work, which helped us continue learning new skills.`,
                 images: ["images/week12/1.jpg", "images/week12/2.jpg", "images/week12/3.jpg", "images/week12/4.jpg", "images/week12/5.jpg", "images/week12/6.jpg", "images/week12/7.jpg", "images/week12/8.jpg", "images/week12/9.jpg"] 
             },
             13: { 
                 title: "Week 13: Last Week as intern", 
                 date: "May 2026", 
-                desc: `The final week was dedicated to the final presentation of our system to the Regional Director and MIS staff. We showcased all features and discussed the technical journey we underwent at DOST V.`,
-                images: ["images/week13/1.jpg", "images/week13/2.jpg", "images/week13/3.jpg", "images/week13/4.jpg", "images/week13/5.jpg", "images/week13/6.jpg", "images/week13/6.jpg"] 
+                desc: `For our thirteenth and final week at DOST, we spent the first three days, from Monday to Wednesday, attending a special event called TukDOST held at the Proxy by The Oriental Albay. During the event, we were assigned as part of the technical team and also helped facilitate some activities. We made sure that the presentations ran smoothly, assisted in setting up equipment, and helped print important documents needed for the event. Although the tasks were sometimes tiring, it was a fun and meaningful experience because we were able to help in a large event and learn more about handling technical responsibilities.
+
+This final week became very memorable for me because it gave us more time to interact with the MIS personnel. While working together during the event, we were able to talk more, share experiences, and enjoy the activities as a team. The busy schedule made us closer, and it felt good to work together after spending many weeks in the internship. It was not only about finishing tasks, but also about creating good memories with the people we worked with.
+
+On Thursday, since it was our last week, we were given the chance to say our messages to the employees of DOST Region V. It was a meaningful moment because we were able to express our gratitude and share our experiences during the internship. We also received our certificate of completion, which made us feel proud and happy for finishing our internship journey. Overall, this final week was emotional, memorable, and a perfect way to end our internship experience.`,
+                images: ["images/week13/1.jpg", "images/week13/2.jpg", "images/week13/3.jpg", "images/week13/4.jpg", "images/week13/5.jpg", "images/week13/6.jpg", "images/week13/7.jpg", "images/week13/8.jpg", "images/week13/9.jpg", "images/week13/10.jpg", "images/week13/11.jpg", "images/week13/12.jpg"] 
             }
         };
 
-        // NEW LOGIC: TRACK EXPANSION STATE
         let isExpanded = false;
-
-        // Initialize Cards
         const container = document.getElementById('cards-container');
-        
+
         function renderCards() {
             container.innerHTML = '';
             for (let i = 1; i <= 13; i++) {
-                // Add "hidden" and "extra-card" classes to cards after the 4th one
                 const isExtraClass = i > 4 ? 'hidden extra-card' : '';
                 const displayNum = i < 10 ? `0${i}` : i;
-
                 container.innerHTML += `
                     <div onclick="openModal(${i})" class="${isExtraClass} group bg-white dark:bg-darkCard p-8 rounded-4xl shadow-sm border border-slate-100 dark:border-slate-800 hover:shadow-xl hover:border-brandBlue/20 transition-all duration-500 cursor-pointer relative overflow-hidden">
                         <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-25 transition-opacity duration-500">
                             <span class="text-6xl font-black italic text-brandBlue dark:text-blue-500">${displayNum}</span>
                         </div>
-                        <div class="w-12 h-12 bg-blue-50 dark:bg-blue-900/30 text-brandBlue dark:text-blue-400 rounded-2xl flex items-center justify-center font-bold mb-6 group-hover:bg-brandBlue group-hover:text-white transition">
-                            W${i}
-                        </div>
+                        <div class="w-12 h-12 bg-blue-50 dark:bg-blue-900/30 text-brandBlue dark:text-blue-400 rounded-2xl flex items-center justify-center font-bold mb-6 group-hover:bg-brandBlue group-hover:text-white transition">W${i}</div>
                         <h4 class="text-xl font-bold text-slate-800 dark:text-slate-100 mb-2">Week ${i}</h4>
                         <p class="text-sm text-slate-500 dark:text-slate-400 mb-4 line-clamp-2">${reports[i].title}</p>
-                        <span class="text-accentOrange font-bold text-xs uppercase tracking-widest flex items-center gap-2">
-                            View Report <span class="group-hover:translate-x-1 transition">→</span>
-                        </span>
-                    </div>
-                `;
+                        <span class="text-accentOrange font-bold text-xs uppercase tracking-widest flex items-center gap-2">View Report →</span>
+                    </div>`;
             }
         }
 
-        // TOGGLE FUNCTION
         function toggleAllCards() {
             const extraCards = document.querySelectorAll('.extra-card');
             const btn = document.getElementById('see-all-btn');
             isExpanded = !isExpanded;
-
-            extraCards.forEach(card => {
-                if (isExpanded) {
-                    card.classList.remove('hidden');
-                    card.classList.add('animate-in', 'fade-in', 'slide-in-from-bottom-4', 'duration-500');
-                } else {
-                    card.classList.add('hidden');
-                }
-            });
-
+            extraCards.forEach(card => card.classList.toggle('hidden', !isExpanded));
             btn.innerText = isExpanded ? 'Show Less' : 'See All Reports';
         }
 
-        renderCards();
-
-        // Dark Mode Logic
-        function toggleDarkMode() {
-            const html = document.documentElement;
-            const sunIcon = document.getElementById('sun-icon');
-            const moonIcon = document.getElementById('moon-icon');
-            
-            html.classList.toggle('dark');
-            
-            if (html.classList.contains('dark')) {
-                sunIcon.classList.remove('hidden');
-                moonIcon.classList.add('hidden');
-                localStorage.setItem('theme', 'dark');
-            } else {
-                sunIcon.classList.add('hidden');
-                moonIcon.classList.remove('hidden');
-                localStorage.setItem('theme', 'light');
-            }
-        }
-
-        // Load saved theme
-        if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-            document.documentElement.classList.add('dark');
-            document.getElementById('sun-icon').classList.remove('hidden');
-            document.getElementById('moon-icon').classList.add('hidden');
-        }
-
-        // Modal Functions
         function openModal(week) {
             const data = reports[week];
             document.getElementById('modal-title').innerText = data.title;
             document.getElementById('modal-date').innerText = data.date;
             document.getElementById('modal-desc').innerText = data.desc;
-            const gallery = document.getElementById('modal-gallery');
-            gallery.innerHTML = ''; 
-
-            data.images.forEach(src => {
-                gallery.innerHTML += `
-                    <div class="aspect-video bg-slate-100 dark:bg-slate-800 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-700">
-                        <img src="${src}" onclick="zoomImage('${src}')" 
-                             class="w-full h-full object-cover cursor-zoom-in hover:scale-105 transition duration-300">
-                    </div>`;
-            });
-
+            document.getElementById('modal-gallery').innerHTML = data.images.map(src => `
+                <div class="aspect-video bg-slate-100 dark:bg-slate-800 rounded-2xl overflow-hidden">
+                    <img src="${src}" onclick="zoomImage('${src}')" class="w-full h-full object-cover cursor-zoom-in hover:scale-105 transition duration-300">
+                </div>`).join('');
             document.getElementById('doc-modal').classList.remove('hidden');
             document.body.style.overflow = 'hidden';
         }
 
-        function closeModal() {
-            document.getElementById('doc-modal').classList.add('hidden');
-            document.body.style.overflow = 'auto';
+        function closeModal() { document.getElementById('doc-modal').classList.add('hidden'); document.body.style.overflow = 'auto'; }
+        function zoomImage(src) { document.getElementById('zoomed-img').src = src; document.getElementById('zoom-overlay').classList.remove('hidden'); }
+        function closeZoom() { document.getElementById('zoom-overlay').classList.add('hidden'); }
+        function toggleDarkMode() {
+            document.documentElement.classList.toggle('dark');
+            const isDark = document.documentElement.classList.contains('dark');
+            document.getElementById('sun-icon').classList.toggle('hidden', !isDark);
+            document.getElementById('moon-icon').classList.toggle('hidden', isDark);
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
         }
 
-        function zoomImage(src) {
-            const overlay = document.getElementById('zoom-overlay');
-            const img = document.getElementById('zoomed-img');
-            img.src = src;
-            overlay.classList.remove('hidden');
-        }
-
-        function closeZoom() {
-            document.getElementById('zoom-overlay').classList.add('hidden');
-        }
+        renderCards();
+        if (localStorage.getItem('theme') === 'dark') toggleDarkMode();
     </script>
 </body>
 </html>
